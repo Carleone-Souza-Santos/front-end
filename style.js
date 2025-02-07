@@ -2,28 +2,28 @@
 //vamos criar o banco de dados,,,simulação (Banco de Dados) 
     
 let bancoDeDados = [
-        { id: 1, nome: "Café Premium", descricao: "Café 100% Arábica", imagem: "./img/CaféArmarinho.png"}];
+        { id: 1, nome: "Café Premium", descricao: "Café 100% Arábica está cada vez mais caro!", imagem: "./img/CaféArmarinho.png"}];
 
 
 
 // Função para Renderizar os Produtos
-const renderizarProdutos = ()=> {
-        let container = document.getElementById("listaProdutos");
+const renderizarNoticias = ()=> {
+        let container = document.getElementById("listaNoticias");
         container.innerHTML = ""; 
 
-        bancoDeDados.forEach((produto) => {
+        bancoDeDados.forEach((noticia) => {
             let card = `
                 <div class="col s12 m3">
                     <div class="card">
                         <div class="card-image">
-                            <img src="${produto.imagem}" alt="${produto.nome}">
+                            <img src="${noticia.imagem}" alt="${noticia.nome}">
                         </div>
                         <div class="card-content">
-                            <span class="card-title">${produto.nome}</span>
-                            <p>${produto.descricao}</p>
+                            <span class="card-title">${noticia.nome}</span>
+                            <p>${noticia.descricao}</p>
                         </div>
                         <div class="card-action">
-                            <button class="btn red" onclick="removerProduto(${produto.id})">Remover</button>
+                            <button class="btn red" onclick="removerNoticias(${noticia.id})">Remover</button>
                         </div>
                     </div>
                 </div>
@@ -33,11 +33,11 @@ const renderizarProdutos = ()=> {
     }
 
 
-    // Função para Adicionar Produto
-    const adicionarProduto =()=> {
-        let nome = document.getElementById("nomeProduto").value;
-        let descricao = document.getElementById("descricaoProduto").value;
-        let imagem = document.getElementById("imagemProduto").value || "./img/CaféArmarinho.png"; 
+    // Função para Adicionar noticia
+    const adicionarNoticias =()=> {
+        let nome = document.getElementById("nomeNoticia").value;
+        let descricao = document.getElementById("descricaoNoticia").value;
+        let imagem = document.getElementById("imagemNoticia").value || "./img/CaféArmarinho.png"; 
 
         if (nome.trim() === "" || descricao.trim() === "") {
             alert("Por favor, preencha todos os campos!");
@@ -45,7 +45,7 @@ const renderizarProdutos = ()=> {
         }
       
 
-        let novoProduto = {
+        let novaNoticia = {
             id: Date.now(), 
             nome: nome,
             descricao: descricao,
@@ -53,18 +53,18 @@ const renderizarProdutos = ()=> {
         };
           
 
-        bancoDeDados.push(novoProduto);
-        renderizarProdutos(); // Atualiza os cards
+        bancoDeDados.push(novaNoticia);
+        renderizarNoticias(); // Atualiza os cards
     }
 
-    // Função para Remover Produto
-    const removerProduto = (id)=> {
-        bancoDeDados = bancoDeDados.filter(produto => produto.id !== id);
-        renderizarProdutos();
+    // Função para Remover Noticia
+    const removerNoticias = (id)=> {
+        bancoDeDados = bancoDeDados.filter(noticia => noticia.id !== id);
+        renderizarNoticias();
     }
 
-    // Inicializa com os produtos iniciais
-    renderizarProdutos();
+    // Inicializa com as Noticias iniciais
+    renderizarNoticias();
 
 
 

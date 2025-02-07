@@ -11,33 +11,31 @@
 
     <h3 class="center-align">Blog</h3>
 
-    <!-- Formulário para adicionar produto -->
+    <!-- Formulário para adicionar notícia -->
     <div class="row">
         <div class="col s12 m6">
             <div class="input-field">
-                <input type="text" id="nomeProduto" placeholder="Nome do Produto">
+                <input type="text" id="nomeNoticia" placeholder="Nome do Notiicia">
             </div>
         </div>
         <div class="col s12 m6">
             <div class="input-field">
-                <input type="text" id="descricaoProduto" placeholder="Descrição do Produto">
+                <input type="text" id="descricaoNoticia" placeholder="Descrição da Notícia">
             </div>
         </div>
         <div class="col s12">
             <div class="input-field">
-                <input type="text" id="imagemProduto" placeholder="URL da Imagem">
+                <input type="text" id="imagemNoticia" placeholder="URL da Imagem Notícia">
             </div>
         </div>
         <div class="col s12">
-            <button class="btn green" onclick="adicionarProduto()">Adicionar Produto</button>
+            <button class="btn green" onclick="adicionarNoticias()">Adicionar Notícias</button>
         </div>
     </div>
 
     <!-- Área dos Cards -->
-    <div class="row" id="listaProdutos"></div>
+    <div class="row" id="listaNoticias"></div>
 
-
-    <a class="btn-floating btn-large waves-effect waves-light blue" id="tag">+<i class="material-icons"></i></a>
 
     <!-- Materialize JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
